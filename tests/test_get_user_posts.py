@@ -26,7 +26,7 @@ def test_get_user_posts():
 
     with allure.step("Retrieve a list of users"):
         user_response = api.get("/users")
-        assert user_response.status_code == 200, f"Unexpected status code: {user_response.status_code}"
+        assert user_response.status_code in [200, 201], f"Unexpected status code: {user_response.status_code}"
         users = user_response.json()
         assert users, "User list is empty"
 

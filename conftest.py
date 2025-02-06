@@ -2,10 +2,10 @@ import os
 import pytest
 import logging
 from utils.api_client import APIClient
-from utils.config import Config  # ✅ Import Config
+from utils.config import Config 
 
 # Ensure the report directory exists
-REPORT_DIR = Config.REPORT_DIR or "Report/"  # ✅ Default fallback
+REPORT_DIR = Config.REPORT_DIR or "Report/"  
 if not os.path.exists(REPORT_DIR):
     os.makedirs(REPORT_DIR)
     print(f"✅ Created Report Directory: {REPORT_DIR}")
