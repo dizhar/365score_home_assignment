@@ -45,8 +45,8 @@ pytest-boilerplate/
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/python-api-testing-boilerplate.git
-cd python-api-testing-boilerplate
+git clone https://github.com/dizhar/365score_home_assignment.git
+cd 365score_home_assignment
 ```
 
 ### 2️⃣ Install Allure (Required for Reports)
