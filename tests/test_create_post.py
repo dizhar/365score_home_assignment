@@ -1,3 +1,16 @@
+"""
+📌 Test: Create a Post for a Random User
+
+🔹 **Purpose:** 
+   - Ensures that an authenticated user can create a post using the API.
+   - Validates API response and checks for correct data persistence.
+
+🔹 **Usefulness:** 
+   - Helps verify that the `/posts` endpoint correctly handles post creation.
+   - Ensures that posts are correctly associated with a valid `userId`.
+   - Provides real-time logging and structured Allure reporting for debugging.
+"""
+
 import random
 import allure
 import logging

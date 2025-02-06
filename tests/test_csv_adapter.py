@@ -1,3 +1,17 @@
+"""
+📌 Test: Data-Driven Post Creation using CSV
+
+🔹 **Purpose:**  
+   - Automates post creation tests using multiple test data entries from a CSV file.
+   - Ensures that different users can successfully create posts via the API.
+
+🔹 **Usefulness:**  
+   - Enables **Data-Driven Testing (DDT)** by dynamically executing the test with multiple data sets.
+   - Helps identify potential failures for different inputs without modifying test logic.
+   - Improves test coverage by validating the API against various scenarios.
+   - Provides structured logging and Allure reporting for better debugging.
+"""
+
 import allure
 import pytest
 from utils.csv_adapter import CSVAdapter

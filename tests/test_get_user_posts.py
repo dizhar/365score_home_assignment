@@ -1,3 +1,17 @@
+"""
+📌 Test: Validate Posts for a Random User
+
+🔹 **Purpose:**  
+   - Ensures that a random user's posts contain valid **Post IDs**.
+   - Validates that each post ID is an integer within an expected range.
+
+🔹 **Usefulness:**  
+   - **Verifies API consistency** by ensuring posts belong to a valid user.
+   - **Enhances test coverage** by selecting a **random user** instead of a fixed one.
+   - **Improves debugging** by logging and attaching user email details in Allure Reports.
+   - **Prevents invalid data issues** by ensuring all posts meet expected criteria.
+"""
+
 import random
 import allure
 import logging
