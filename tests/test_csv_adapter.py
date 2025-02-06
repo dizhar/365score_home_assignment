@@ -12,11 +12,14 @@
    - Provides structured logging and Allure reporting for better debugging.
 """
 
+import logging
 import allure
 import pytest
 from utils.csv_adapter import CSVAdapter
 from utils.api_client import APIClient
 
+
+logger = logging.getLogger(__name__)
 
 @allure.feature("Data-Driven Testing")
 @allure.story("Verify API with multiple test data entries")
@@ -36,3 +39,5 @@ def test_post_creation(test_data):
         assert response_data["title"] == post_data["title"]
         assert response_data["body"] == post_data["body"]
         assert post_response.status_code in [200, 201]
+        
+    logger.info(f"✅ Successfully created post for User ID {user_id} with title '{title}'")
