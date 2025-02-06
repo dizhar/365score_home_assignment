@@ -107,7 +107,7 @@ allure serve Report/
 
 ```ini
 [pytest]
-addopts = --alluredir=Report/ --reruns 2 --reruns-delay 2
+addopts = --reruns 2 --reruns-delay 2
 ```
 
 ✔ Generates **Allure Reports**  
