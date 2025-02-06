@@ -1,0 +1,7 @@
+pytest>=7.0.0
+pytest-allure-adaptor
+pytest-rerunfailures
+requests
+allure-pytest
+setuptools
+python-dotenv

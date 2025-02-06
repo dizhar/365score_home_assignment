@@ -1,0 +1,39 @@
+# Ignore Python cache files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Ignore virtual environment
+venv/
+.env
+
+# Ignore logs
+*.log
+logs/
+qa_automation.log
+
+# Ignore test reports
+Report/
+allure-results/
+allure-report/
+
+# Ignore compiled code
+*.so
+*.dll
+*.dylib
+
+# Ignore IDE/editor specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ignore dependencies (if using pipenv/poetry)
+Pipfile
+Pipfile.lock
+poetry.lock
+
+# Ignore pytest cache
+.cache/
+.pytest_cache/
