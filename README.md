@@ -21,7 +21,9 @@ This repository provides a **simple and scalable boilerplate** for API testing u
 ```
 pytest-boilerplate/
 │── tests/
-│   ├── test_users.py
+│   |── data
+|   |     |── test_data.csv
+├── test_users.py
 │   ├── test_posts.py
 │   ├── test_create_post.py
 │── utils/
@@ -47,19 +49,40 @@ git clone https://github.com/YOUR_USERNAME/python-api-testing-boilerplate.git
 cd python-api-testing-boilerplate
 ```
 
-### 2️⃣ Create a Virtual Environment
+### 2️⃣ Install Allure (Required for Reports)
+
+Before running the tests, install Allure based on your OS:
+
+📌 **Install Allure on macOS:**
 
 ```bash
-python -m venv venv
-source venv/bin/activate  # Mac/Linux
-venv\Scripts\activate     # Windows
+brew install allure
 ```
+
+📌 **Install Allure on Ubuntu/Debian:**
+
+```bash
+sudo apt install allure
+```
+
+📌 **Install Allure on Windows**  
+Download and install Allure from the [official website](https://docs.qameta.io/allure/#_installing_a_commandline) or use [Scoop](https://scoop.sh/):
+
+```bash
+scoop install allure
+```
+
+### 2️⃣ Run the Setup Script
+
+````bash
+chmod +x setup.sh  # Make it executable (only needed once)
+./setup.sh         # Run setup
 
 ### 3️⃣ Install Dependencies
 
 ```bash
 pip install -r requirements.txt
-```
+````
 
 ---
 
@@ -74,57 +97,8 @@ pytest
 ### Run tests with Allure Reports
 
 ```bash
-pytest --alluredir=Report/
+pytest
 allure serve Report/
-```
-
----
-
-## ✅ Example Test Cases
-
-### **1️⃣ Retrieve a User (`tests/test_users.py`)**
-
-```python
-import allure
-from utils.api_client import APIClient
-
-@allure.feature("Users")
-def test_get_user():
-    api = APIClient()
-    response = api.get("/users")
-    assert response.status_code == 200
-
-    users = response.json()
-    assert len(users) > 0
-```
-
-### **2️⃣ Fetch Posts (`tests/test_posts.py`)**
-
-```python
-@allure.feature("Posts")
-def test_get_user_posts():
-    api = APIClient()
-    response = api.get("/posts")
-    assert response.status_code == 200
-
-    posts = response.json()
-    assert all(isinstance(post["id"], int) for post in posts)
-```
-
-### **3️⃣ Create a New Post (`tests/test_create_post.py`)**
-
-```python
-@allure.feature("Posts")
-def test_create_post():
-    api = APIClient()
-    post_data = {
-        "userId": 1,
-        "title": "Automated Test Post",
-        "body": "This is a test post created via API."
-    }
-    response = api.post("/posts", post_data)
-    assert response.status_code in [200, 201]
-    assert response.json()["title"] == post_data["title"]
 ```
 
 ---
