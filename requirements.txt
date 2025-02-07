@@ -5,3 +5,4 @@ requests
 allure-pytest
 setuptools
 python-dotenv
+pytest-xdist
