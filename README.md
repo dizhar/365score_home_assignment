@@ -19,7 +19,7 @@ This repository provides a **simple and scalable boilerplate** for API testing u
 ## 🏗 Project Structure
 
 ```
-pytest-boilerplate/
+365score_home_assignment/
 │── tests/
 │   |── data
 |   |     |── test_data.csv
